@@ -1,0 +1,9 @@
+.carrito {
+  min-height: 80vh;
+}
+
+.total {
+  display: flex;
+  font-weight: 700;
+  justify-content: flex-end;
+}
