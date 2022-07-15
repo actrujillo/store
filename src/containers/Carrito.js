@@ -20,6 +20,7 @@ export default function Carrito() {
   const { carrito, deleteCarrito } = useContext(Contexto);
 
   // aparece pero solo indica comportamiento
+  // BUSCAR FORMA DE QUE MUESTRE EN CARRITO Y TOTAL
   console.log(carrito.map((ite) => ite[0].id).filter((i) => i !== i.id));
 
   const products = carrito.map((item) => item[0]);
