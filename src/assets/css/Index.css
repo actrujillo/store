@@ -1,0 +1,24 @@
+:root {
+  --first: #f4f3ee;
+  --second: #ffffff;
+  --third: #f4ae90;
+  --fourth: #ef8354;
+  --fifth: #8693ac;
+  --text: #2d3142;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--first);
+  color: var(--text);
+  margin: 0;
+  box-sizing: border-box;
+}

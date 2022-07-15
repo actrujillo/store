@@ -1,0 +1,15 @@
+.footer {
+  align-items: center;
+  background: #2d3142;
+  display: flex;
+  color: #ffffff;
+  height: 10vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer h4 {
+  font-weight: 300;
+  font-size: 0.8rem;
+  padding: 0.5 rem;
+}
