@@ -6,8 +6,8 @@ import "../assets/css/Carrito.css";
 export default function Carrito() {
   const { carrito, deleteCarrito } = useContext(Contexto);
 
-  // variable para obtener el precio y utilizarlo en el total del carrito
-  const suma = carrito.map((item) => item[0].price);
+  // filtro los id de los productos que aparecen en el carrito
+  console.log(carrito.map((ite) => ite[0].id).filter((i) => i !== i.id));
 
   return (
     <div className="carrito">
@@ -19,8 +19,11 @@ export default function Carrito() {
         ></ItemCarrito>
       ))}
       <span className="total">
-        Total: ${" "}
-        {suma.reduce((valorInit, amount) => valorInit + amount, 0).toFixed(2)}
+        Total: $
+        {carrito
+          .map((item) => item[0].price)
+          .reduce((valorInit, amount) => valorInit + amount, 0)
+          .toFixed(2)}
       </span>
     </div>
   );

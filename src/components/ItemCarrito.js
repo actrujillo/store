@@ -6,6 +6,12 @@ export default function ItemCarrito(props) {
   const handleDelete = () => {
     props.deleteCarrito(id);
   };
+
+  // const filtered = keys.filter(
+  //   (value, index, self) => self.findIndex((v) => v.id === value.id) === index
+  // );
+
+
   return (
     <div className="itemCarrito">
       <div className="itemCarrito-articulo">
@@ -18,9 +24,7 @@ export default function ItemCarrito(props) {
             {title}
           </h2>
           <span className="cantidad">Cantidad: {}</span>
-          <p>
-            Precio: $ {price.toFixed(2)}
-          </p>
+          <p>Precio: $ {price.toFixed(2)}</p>
         </div>
 
         <button onClick={handleDelete}>Eliminar producto</button>

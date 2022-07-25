@@ -1,6 +1,10 @@
 // TYPES
 
 const LISTA_PRODUCTOS = "LISTA_PRODUCTOS";
+const WOMEN = "WOMEN";
+const MEN = "MEN";
+const ELECTRO = "ELECTRO";
+const JEWELRY = "JEWELRY";
 const ADD_CARRITO = "ADD_CARRITO";
 const DELETE_CARRITO = "DELETE_CARRITO";
 
@@ -16,12 +20,20 @@ export default function Reducer(state, action) {
   switch (type) {
     case LISTA_PRODUCTOS:
       return { ...state, productos: payload };
+    case WOMEN:
+      return { ...state, productos: payload };
+    case MEN:
+      return { ...state, productos: payload };
+    case ELECTRO:
+      return { ...state, productos: payload };
+    case JEWELRY:
+      return { ...state, productos: payload };
     case ADD_CARRITO:
       return {
         ...state,
         carrito: [
           ...state.carrito,
-          state.productos.filter((ite) => ite.id == parseInt(payload)),
+          state.productos.filter((ite) => ite.id === parseInt(payload)),
         ],
       };
     case DELETE_CARRITO:

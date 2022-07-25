@@ -1,0 +1,26 @@
+.itemHome {
+  max-width: 50%;
+}
+
+img {
+  width: 100%;
+}
+
+h3 {
+  background: #2d3142;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 200;
+  padding: 2px 5px;
+  position: absolute;
+  text-transform: uppercase;
+  text-align: center;
+  width: 30%;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}

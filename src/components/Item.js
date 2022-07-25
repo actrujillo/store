@@ -7,19 +7,19 @@ export default function Item(props) {
   const { addCarrito } = useContext(Contexto);
 
   return (
-    <>
-      <div className="item-producto">
-        <h5>{title}</h5>
-        <img src={image} alt="" />
-        <span>{price.toFixed(2)}</span>
-        <button
-          onClick={() => {
-            addCarrito(id);
-          }}
-        >
-          +
-        </button>
+    <div className="item">
+      <div className="item-img">
+        <img src={image} alt="product" />
       </div>
-    </>
+      <h5>{title}</h5>
+      <span className="price">$ {price.toFixed(2)}</span>
+      <button
+        onClick={() => {
+          addCarrito(id);
+        }}
+      >
+        Add to cart
+      </button>
+    </div>
   );
 }

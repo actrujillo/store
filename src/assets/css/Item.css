@@ -1,3 +1,51 @@
-.item-producto img {
+.item {
+  background: #f4ae90;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+  padding: 0.5rem;
+  margin: 0.4rem;
+  width: 40%;
+}
+
+.item-img {
+  background-color: #fff;
+  border: 1px solid #f4f3ee;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55%;
+}
+
+.item-img img {
   width: 100px;
+}
+
+.price {
+  font-weight: 800;
+  padding: 0 0 10px 0;
+  width: 100%;
+}
+
+.item h5 {
+  align-items: center;
+  display: flex;
+  font-weight: 400;
+  height: 110px;
+  margin: 0;
+}
+
+.item button {
+  background: #d4a089;
+  border: 1px solid #f4f3ee;
+  border-radius: 8px;
+  color: #f4f3ee;
+  padding: 0.2rem;
+}
+
+.item button:hover {
+  background-color: #ef8354;
 }

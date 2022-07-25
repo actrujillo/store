@@ -1,13 +1,12 @@
 import Contexto from "./Contexto";
 import axios from "axios";
-import { useReducer } from "react";
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import Reducer from "./Reducer";
+import loading from "../assets/statics/loading.gif";
 
 export default function UsarContexto(props) {
   // const [estado, setEstado] = useState([]);
   // usamos este useState para poder agregar como estado los productos de la api al array productos
-
   const { children } = props;
 
   const estadoInicial = {
@@ -23,7 +22,6 @@ export default function UsarContexto(props) {
     const res = await axios.get("https://fakestoreapi.com/products");
     // setEstado(res.data);
     dispatch({ type: "LISTA_PRODUCTOS", payload: res.data });
-    console.log(res.data, "desde el console");
   };
 
   const addCarrito = (item) => {
@@ -34,6 +32,34 @@ export default function UsarContexto(props) {
     dispatch({ type: "DELETE_CARRITO", payload: item });
   };
 
+  const women = async () => {
+    const res = await axios.get(
+      "https://fakestoreapi.com/products/category/women's%20clothing"
+    );
+    dispatch({ type: "WOMEN", payload: res.data });
+  };
+
+  const men = async () => {
+    const res = await axios.get(
+      "https://fakestoreapi.com/products/category/men's%20clothing"
+    );
+    dispatch({ type: "MEN", payload: res.data });
+  };
+
+  const electro = async () => {
+    const res = await axios.get(
+      "https://fakestoreapi.com/products/category/electronics"
+    );
+    dispatch({ type: "ELECTRO", payload: res.data });
+  };
+
+  const jewelry = async () => {
+    const res = await axios.get(
+      "https://fakestoreapi.com/products/category/jewelery"
+    );
+    dispatch({ type: "JEWELRY", payload: res.data });
+  };
+
   return (
     <Contexto.Provider
       value={{
@@ -42,6 +68,10 @@ export default function UsarContexto(props) {
         listaProductos,
         addCarrito,
         deleteCarrito,
+        women,
+        men,
+        electro,
+        jewelry,
       }}
     >
       {children}

@@ -1,13 +1,13 @@
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
 import Contexto from "../context/Contexto";
 import Item from "../components/Item";
 import "../assets/css/Productos.css";
-import { useEffect } from "react";
 
-export default function Productos() {
-  const { listaProductos, productos } = useContext(Contexto);
+export const CategoriaJewelry = () => {
+  const { jewelry, productos } = useContext(Contexto);
+
   useEffect(() => {
-    listaProductos();
+    jewelry();
   }, []);
 
   return (
@@ -17,4 +17,4 @@ export default function Productos() {
       ))}
     </div>
   );
-}
+};
