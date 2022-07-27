@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Contexto from "../context/Contexto";
 import ItemCarrito from "../components/ItemCarrito";
 import "../assets/css/Carrito.css";
+import { CarritoVacio } from "../components/CarritoVacio";
 
 export default function Carrito() {
   const { carrito, deleteCarrito } = useContext(Contexto);
@@ -11,13 +12,17 @@ export default function Carrito() {
 
   return (
     <div className="carrito">
-      {carrito.map((item, i) => (
-        <ItemCarrito
-          {...item}
-          key={i}
-          deleteCarrito={deleteCarrito}
-        ></ItemCarrito>
-      ))}
+      {carrito.length > 0 ? (
+        carrito.map((item, i) => (
+          <ItemCarrito
+            {...item}
+            key={i}
+            deleteCarrito={deleteCarrito}
+          ></ItemCarrito>
+        ))
+      ) : (
+        <CarritoVacio></CarritoVacio>
+      )}
       <span className="total">
         Total: $
         {carrito

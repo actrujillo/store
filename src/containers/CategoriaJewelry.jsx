@@ -2,19 +2,31 @@ import { useEffect, useContext } from "react";
 import Contexto from "../context/Contexto";
 import Item from "../components/Item";
 import "../assets/css/Productos.css";
+import { SyncLoader } from "react-spinners";
 
 export const CategoriaJewelry = () => {
-  const { jewelry, productos } = useContext(Contexto);
+  const { jewelry, productos, loading, setLoading } = useContext(Contexto);
 
   useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
     jewelry();
   }, []);
 
   return (
     <div className="products">
-      {productos.map((item) => (
-        <Item {...item} key={item.id}></Item>
-      ))}
+      {loading ? (
+        <SyncLoader
+          className="loader"
+          size={10}
+          color={"#333"}
+          loading={loading}
+        />
+      ) : (
+        productos.map((item) => <Item {...item} key={item.id}></Item>)
+      )}
     </div>
   );
 };

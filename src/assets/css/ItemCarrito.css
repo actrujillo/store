@@ -5,11 +5,12 @@
 
 .itemCarrito-articulo {
   align-items: center;
+  background: #f4ae90;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   min-height: auto;
-  margin: 0;
+  margin: 0.5rem;
   padding: 10px;
   width: 100%;
 }
@@ -55,8 +56,10 @@
 }
 
 .itemCarrito button {
-  border: none;
-  color: #777;
+  background: #d4a089;
+  border: 1px solid #f4f3ee;
+  border-radius: 8px;
+  color: #f4f3ee;
   cursor: pointer;
   padding: 5px;
   width: 100%;

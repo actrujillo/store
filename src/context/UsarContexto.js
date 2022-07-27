@@ -2,7 +2,6 @@ import Contexto from "./Contexto";
 import axios from "axios";
 import { useReducer, useState } from "react";
 import Reducer from "./Reducer";
-import loading from "../assets/statics/loading.gif";
 
 export default function UsarContexto(props) {
   // const [estado, setEstado] = useState([]);
@@ -16,6 +15,7 @@ export default function UsarContexto(props) {
 
   const [state, dispatch] = useReducer(Reducer, estadoInicial);
 
+  const [loading, setLoading] = useState(false);
   // el dispatch va a disparar la orden para que diga el TYPE a operar, y en el payload se genera la DATA
 
   const listaProductos = async () => {
@@ -72,6 +72,8 @@ export default function UsarContexto(props) {
         men,
         electro,
         jewelry,
+        loading,
+        setLoading,
       }}
     >
       {children}

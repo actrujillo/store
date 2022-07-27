@@ -13,3 +13,11 @@
 .itemHome {
   max-width: 50%;
 }
+
+.loader {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
+}
