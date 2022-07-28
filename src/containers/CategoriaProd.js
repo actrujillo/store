@@ -1,10 +1,3 @@
-
 export const CategoriaProd = () => {
-
-
-  return (
-    <div>
-
-    </div>
-  )
-}
+  return <div></div>;
+};

@@ -4,17 +4,25 @@ import Item from "../components/Item";
 import "../assets/css/Productos.css";
 import { useEffect } from "react";
 import { SyncLoader } from "react-spinners";
+import { useRef } from "react";
 
 export default function Productos() {
   const { listaProductos, productos, loading, setLoading } =
     useContext(Contexto);
+  const tempProductos = useRef();
 
-  useEffect(() => {
+  const setProductos = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
     listaProductos();
+  };
+
+  tempProductos.current = setProductos;
+
+  useEffect(() => {
+    tempProductos.current();
   }, []);
 
   return (

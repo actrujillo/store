@@ -4,16 +4,24 @@ import Contexto from "../context/Contexto";
 import "../assets/css/Productos.css";
 import Item from "../components/Item";
 import { SyncLoader } from "react-spinners";
+import { useRef } from "react";
 
 export const CategoriaWomen = () => {
   const { women, productos, loading, setLoading } = useContext(Contexto);
+  const tempWomen = useRef();
 
-  useEffect(() => {
+  const setWomen = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
     women();
+  };
+
+  tempWomen.current = setWomen;
+
+  useEffect(() => {
+    tempWomen.current();
   }, []);
 
   return (

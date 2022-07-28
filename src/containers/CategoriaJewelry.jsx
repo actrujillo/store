@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useRef } from "react";
 import Contexto from "../context/Contexto";
 import Item from "../components/Item";
 import "../assets/css/Productos.css";
@@ -6,13 +6,20 @@ import { SyncLoader } from "react-spinners";
 
 export const CategoriaJewelry = () => {
   const { jewelry, productos, loading, setLoading } = useContext(Contexto);
+  const tempJewelry = useRef();
 
-  useEffect(() => {
+  const setJewelry = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
     jewelry();
+  };
+
+  tempJewelry.current = setJewelry;
+
+  useEffect(() => {
+    tempJewelry.current();
   }, []);
 
   return (

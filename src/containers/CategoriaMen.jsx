@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useRef } from "react";
 import Contexto from "../context/Contexto";
 import "../assets/css/Productos.css";
 import Item from "../components/Item";
@@ -6,13 +6,20 @@ import { SyncLoader } from "react-spinners";
 
 export const CategoriaMen = () => {
   const { men, productos, loading, setLoading } = useContext(Contexto);
+  const tempMen = useRef();
 
-  useEffect(() => {
+  const setMen = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
     men();
+  };
+
+  tempMen.current = setMen;
+
+  useEffect(() => {
+    tempMen.current();
   }, []);
 
   return (

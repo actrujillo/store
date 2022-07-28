@@ -3,16 +3,24 @@ import Contexto from "../context/Contexto";
 import Item from "../components/Item";
 import "../assets/css/Productos.css";
 import { SyncLoader } from "react-spinners";
+import { useRef } from "react";
 
 export const CategoriaElectro = () => {
   const { electro, productos, loading, setLoading } = useContext(Contexto);
+  const tempElectro = useRef();
 
-  useEffect(() => {
+  const setElectro = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
     electro();
+  };
+
+  tempElectro.current = setElectro;
+
+  useEffect(() => {
+    tempElectro.current();
   }, []);
 
   return (
