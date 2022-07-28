@@ -23,7 +23,7 @@ export default function ItemCarrito(props) {
             Producto: <br />
             {title}
           </h2>
-          <span className="cantidad">Cantidad: {}</span>
+//           <span className="cantidad">Cantidad: {}</span>
           <p>Precio: $ {price.toFixed(2)}</p>
         </div>
 
