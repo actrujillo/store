@@ -1,28 +1,27 @@
+import { useEffect } from "react";
 import { useContext } from "react";
 import Contexto from "../context/Contexto";
-import Item from "../components/Item";
 import "../assets/css/Productos.css";
-import { useEffect } from "react";
+import Item from "../components/Item";
 import { SyncLoader } from "react-spinners";
 import { useRef } from "react";
 
-export default function Productos() {
-  const { listaProductos, productos, loading, setLoading } =
-    useContext(Contexto);
-  const tempProductos = useRef();
+export const CategoriaWomen = () => {
+  const { women, productos, loading, setLoading } = useContext(Contexto);
+  const tempWomen = useRef();
 
-  const setProductos = () => {
+  const setWomen = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
-    listaProductos();
+    women();
   };
 
-  tempProductos.current = setProductos;
+  tempWomen.current = setWomen;
 
   useEffect(() => {
-    tempProductos.current();
+    tempWomen.current();
   }, []);
 
   return (
@@ -39,4 +38,4 @@ export default function Productos() {
       )}
     </div>
   );
-}
+};

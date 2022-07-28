@@ -1,3 +1,12 @@
-h1{
+h1 {
   color: #333;
+}
+
+.products {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10vh 0 0;
+  padding: 1rem 0;
 }

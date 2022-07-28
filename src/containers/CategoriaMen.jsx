@@ -1,28 +1,25 @@
-import { useContext } from "react";
+import { useEffect, useContext, useRef } from "react";
 import Contexto from "../context/Contexto";
-import Item from "../components/Item";
 import "../assets/css/Productos.css";
-import { useEffect } from "react";
+import Item from "../components/Item";
 import { SyncLoader } from "react-spinners";
-import { useRef } from "react";
 
-export default function Productos() {
-  const { listaProductos, productos, loading, setLoading } =
-    useContext(Contexto);
-  const tempProductos = useRef();
+export const CategoriaMen = () => {
+  const { men, productos, loading, setLoading } = useContext(Contexto);
+  const tempMen = useRef();
 
-  const setProductos = () => {
+  const setMen = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
-    listaProductos();
+    men();
   };
 
-  tempProductos.current = setProductos;
+  tempMen.current = setMen;
 
   useEffect(() => {
-    tempProductos.current();
+    tempMen.current();
   }, []);
 
   return (
@@ -39,4 +36,4 @@ export default function Productos() {
       )}
     </div>
   );
-}
+};

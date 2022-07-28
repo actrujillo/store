@@ -1,9 +1,11 @@
+import { PayWith } from "./PayWith";
 import "../assets/css/Footer.css";
 
 export default function Footer() {
   return (
     <div className="footer">
-      <h4>Tienda Store. Todos los derechos reservados 2022.</h4>
+      <PayWith></PayWith>
+      <h4>© 2022 TRUE STORE COPYRIGHT. ALL RIGHTS RESERVED.</h4>
     </div>
   );
 }

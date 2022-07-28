@@ -1,0 +1,29 @@
+.carritoVacio {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: center;
+}
+
+.carritoVacio h3 {
+  background: #f4ae90;
+  border-radius: 5px;
+  font-weight: 400;
+  height: 20%;
+  padding: 2rem;
+  width: 80%;
+}
+
+.carritoVacio a:link,
+.carritoVacio a:active,
+.carritoVacio a:visited {
+  background: #ef8354;
+  color: #2d3142;
+  font-weight: 700;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 80%;
+}

@@ -2,44 +2,31 @@ import { useContext } from "react";
 import Contexto from "../context/Contexto";
 import ItemCarrito from "../components/ItemCarrito";
 import "../assets/css/Carrito.css";
-
-function removeDuplicates(products) {
-  const seenIds = new Set();
-  const filteredProducts = [];
-
-  for (const product of products) {
-    if (!seenIds.has(product.id)) {
-      filteredProducts.push(product);
-      seenIds.add(product.id);
-    }
-  }
-  return filteredProducts;
-}
+import { CarritoVacio } from "../components/CarritoVacio";
 
 export default function Carrito() {
   const { carrito, deleteCarrito } = useContext(Contexto);
 
-  // aparece pero solo indica comportamiento
-  // BUSCAR FORMA DE QUE MUESTRE EN CARRITO Y TOTAL
+  // filtro los id de los productos que aparecen en el carrito
   console.log(carrito.map((ite) => ite[0].id).filter((i) => i !== i.id));
-
-  const products = carrito.map((item) => item[0]);
-
-  const filteredProducts = removeDuplicates(products);
 
   return (
     <div className="carrito">
-      {filteredProducts.map((item, i) => (
-        <ItemCarrito
-          {...item}
-          key={i}
-          deleteCarrito={deleteCarrito}
-        ></ItemCarrito>
-      ))}
+      {carrito.length > 0 ? (
+        carrito.map((item, i) => (
+          <ItemCarrito
+            {...item}
+            key={i}
+            deleteCarrito={deleteCarrito}
+          ></ItemCarrito>
+        ))
+      ) : (
+        <CarritoVacio></CarritoVacio>
+      )}
       <span className="total">
         Total: $
-        {filteredProducts
-          .map((product) => product.price)
+        {carrito
+          .map((item) => item[0].price)
           .reduce((valorInit, amount) => valorInit + amount, 0)
           .toFixed(2)}
       </span>

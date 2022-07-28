@@ -1,11 +1,16 @@
 import "../assets/css/ItemCarrito.css";
 
 export default function ItemCarrito(props) {
-  const { title, price, image, id } = props;
+  const { title, price, image, id } = props[0];
 
   const handleDelete = () => {
     props.deleteCarrito(id);
   };
+
+  // const filtered = keys.filter(
+  //   (value, index, self) => self.findIndex((v) => v.id === value.id) === index
+  // );
+
 
   return (
     <div className="itemCarrito">
@@ -15,11 +20,10 @@ export default function ItemCarrito(props) {
         </div>
         <div className="itemCarrito-texto">
           <h2>
-            Producto: <br />
             {title}
           </h2>
-          <span className="cantidad">Cantidad: {}</span>
-          <p>Precio: $ {price.toFixed(2)}</p>
+          {/* <span className="cantidad">Cantidad: {}</span> */}
+          <p> $ {price.toFixed(2)}</p>
         </div>
 
         <button onClick={handleDelete}>Eliminar producto</button>
