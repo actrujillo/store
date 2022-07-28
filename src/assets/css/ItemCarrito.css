@@ -8,7 +8,7 @@
   background: #f4ae90;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   min-height: auto;
   margin: 0.5rem;
   padding: 10px;
@@ -52,7 +52,8 @@
 .itemCarrito p {
   display: flex;
   font-size: 14px;
-  justify-content: center;
+  font-weight: 700;
+  justify-content: flex-end;
 }
 
 .itemCarrito button {

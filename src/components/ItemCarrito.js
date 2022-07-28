@@ -20,11 +20,10 @@ export default function ItemCarrito(props) {
         </div>
         <div className="itemCarrito-texto">
           <h2>
-            Producto: <br />
             {title}
           </h2>
-//           <span className="cantidad">Cantidad: {}</span>
-          <p>Precio: $ {price.toFixed(2)}</p>
+          {/* <span className="cantidad">Cantidad: {}</span> */}
+          <p> $ {price.toFixed(2)}</p>
         </div>
 
         <button onClick={handleDelete}>Eliminar producto</button>
