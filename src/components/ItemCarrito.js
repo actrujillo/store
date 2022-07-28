@@ -26,7 +26,7 @@ export default function ItemCarrito(props) {
           <p> $ {price.toFixed(2)}</p>
         </div>
 
-        <button onClick={handleDelete}>Eliminar producto</button>
+        <button onClick={handleDelete}>Delete</button>
       </div>
     </div>
   );
